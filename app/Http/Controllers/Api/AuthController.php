@@ -30,11 +30,9 @@ class AuthController extends Controller
     {
         $credentials = $request->validated();
         if(!Auth::attempt($credentials)) {
-            return response([
-                'message' => 'Provided email and password is incorrect'
-            ]);
+            return response(['message' => 'Provided email or password is incorrect']);
         }
-
+        /** @var User $user */
         $user = Auth::user();
 
         $token = $user->createToken('main')->plainTextToken;

@@ -20,7 +20,7 @@ export default function Signup() {
             email: emailRef.current.value,
             password: passwordRef.current.value,
             password_confirmation: confirmPasswordRef.current.value
-        }
+        };
         axiosClient.post('/signup', payload)
             .then(({data}) => {
                 setUser(data.user),
