@@ -13,7 +13,7 @@ axiosClient.interceptors.request.use((config) => {
 
 axiosClient.interceptors.response.use((response) => {
     return response;
-}), (error) => {
+}, (error) => {
     const {response} = error;
 
     if (response.status === 401) {
@@ -21,6 +21,6 @@ axiosClient.interceptors.response.use((response) => {
     }
 
     throw error;
-}
+});
 
 export default axiosClient;

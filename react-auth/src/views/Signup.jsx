@@ -9,9 +9,9 @@ export default function Signup() {
     const passwordRef = useRef();
     const confirmPasswordRef = useRef();
 
+    const [errors, setErrors] = useState(null);
     const {setToken, setUser} = useStateContext();
 
-    const [errors, setErrors] = useState(null);
 
     const onSubmit = (ev) => {
         ev.preventDefault();
