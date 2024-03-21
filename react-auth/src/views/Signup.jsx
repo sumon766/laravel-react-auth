@@ -9,9 +9,9 @@ export default function Signup() {
     const passwordRef = useRef();
     const confirmPasswordRef = useRef();
 
+    const [errors, setErrors] = useState(null);
     const {setToken, setUser} = useStateContext();
 
-    const [errors, setErrors] = useState(null);
 
     const onSubmit = (ev) => {
         ev.preventDefault();
@@ -20,7 +20,7 @@ export default function Signup() {
             email: emailRef.current.value,
             password: passwordRef.current.value,
             password_confirmation: confirmPasswordRef.current.value
-        }
+        };
         axiosClient.post('/signup', payload)
             .then(({data}) => {
                 setUser(data.user),
