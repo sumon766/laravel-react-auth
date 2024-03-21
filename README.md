@@ -141,7 +141,7 @@ localhost:3000
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author**
+👤 **MD Mursedul Islam**
 
 - GitHub: [@githubhandle](https://github.com/sumon766)
 - Twitter: [@twitterhandle](https://twitter.com/sumon766)
