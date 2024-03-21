@@ -17,9 +17,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
-
-> Describe your project in 1 or 2 sentences.
+# 📖 Laravel React Auth with Sanctum <a name="about-project"></a>
 
 **Laravel-React-Auth** is a project created using laravel as backend and react as frontend where a general authentication system is implemented using API. A user can authenticate him/her self through the frontend React and login to the authorized access area with the help of Access Token.
 
