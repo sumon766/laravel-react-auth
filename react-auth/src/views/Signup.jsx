@@ -35,28 +35,39 @@ export default function Signup() {
     }
 
     return (
-        <div className="signup-form">
-            <form onSubmit={onSubmit}>
-                <h2>Signup</h2>
+        <div className="container">
+            <div className="row justify-content-center pt-5">
+                <div className="col-6 align-self-center">
+                    <div className="signup-form">
+                        <form onSubmit={onSubmit}>
+                            <h2 className="text-center">Signup</h2>
 
-                {
-                    errors &&
-                    <div className="signup-errors">
-                        {Object.keys(errors).map(key => (
-                            <p key={key}>{errors[key][0]}</p>
-                        ))}
+                            {
+                                errors &&
+                                <div className="alert alert-warning">
+                                    {Object.keys(errors).map(key => (
+                                        <p key={key}>{errors[key][0]}</p>
+                                    ))}
+                                </div>
+                            }
+                            <input type="text" ref={nameRef} className="form-control form-control-lg mt-5" placeholder="Full Name" />
+                            <input type="text" ref={emailRef} className="form-control form-control-lg mt-3" placeholder="Email" />
+                            <input type="password" ref={passwordRef} className="form-control form-control-lg mt-3" placeholder="Password" />
+                            <input type="password" ref={confirmPasswordRef} className="form-control form-control-lg mt-3" placeholder="Confirm password" />
+                            <div className="row">
+                                <div className="col-md-7 mt-3">
+                                    <button type="submit" className="btn btn-primary">Signup</button>
+                                </div>
+                                <div className="col-md-5 mt-3">
+                                    <p className="message">
+                                        Already Registered? <Link to="/login" class="btn btn-dark">Login</Link>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                }
-
-                <input type="text" ref={nameRef} placeholder="Full Name" />
-                <input type="text" ref={emailRef} placeholder="Email" />
-                <input type="password" ref={passwordRef} placeholder="Password" />
-                <input type="password" ref={confirmPasswordRef} placeholder="Confirm password" />
-                <button type="submit">Signup</button>
-                <p className="message">
-                    Already Registered? <Link to="/login">Login</Link>
-                </p>
-            </form>
+                </div>
+            </div>
         </div>
     )
 }

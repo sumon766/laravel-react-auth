@@ -10,10 +10,7 @@ export default function DefaultLayout() {
     }
 
     return (
-        <div className="container-fluid">
-            <div className="row">
-
-            </div>
+        <div>
             <Outlet />
         </div>
     )

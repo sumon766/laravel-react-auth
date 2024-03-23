@@ -29,26 +29,38 @@ export default function Login() {
     }
 
     return (
-        <div className="login-form">
-            <form onSubmit={loginSubmit}>
-                <h2>Login</h2>
+        <div className="container">
+            <div className="row justify-content-center pt-5">
+                <div className="col-6 align-self-center">
+                    <div className="login-form">
+                        <form onSubmit={loginSubmit}>
+                            <h2 className="text-center">Login</h2>
 
-                {
-                    errors &&
-                    <div className="signup-errors">
-                        {Object.keys(errors).map(key => (
-                            <p key={key}>{errors[key][0]}</p>
-                        ))}
+                            {
+                                errors &&
+                                <div className="alert alert-warning">
+                                    {Object.keys(errors).map(key => (
+                                        <p key={key}>{errors[key][0]}</p>
+                                    ))}
+                                </div>
+                            }
+
+                            <input type="email" ref={emailRef} className="form-control form-control-lg mt-5" placeholder="Email" />
+                            <input type="password" ref={passwordRef} className="form-control form-control-lg mt-3" placeholder="Password" />
+                            <div className="row">
+                                <div className="col-md-5 mt-3">
+                                    <button type="submit" className="btn btn-primary">Login</button>
+                                </div>
+                                <div className="col-md-7 mt-3">
+                                    <p className="message">
+                                        Not Registered? <Link to="/signup" class="btn btn-dark">Create an account</Link>
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                }
-
-                <input type="text" ref={emailRef} placeholder="email" />
-                <input type="password" ref={passwordRef} placeholder="Password" />
-                <button type="submit">Login</button>
-                <p className="message">
-                    Not Registered? <Link to="/signup">Create an account</Link>
-                </p>
-            </form>
+                </div>
+            </div>
         </div>
     )
 }
